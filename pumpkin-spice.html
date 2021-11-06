@@ -45,9 +45,9 @@
             <img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" id="pumpkin">
             <div class = "side-pics">
                 <img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll"  class ="pumpkins" id = "main-pumpkin"> 
-                <img src = "pumpkin1.jpg" alt= "Cinnamon roll 1"  class="pumpkins"> 
-                <img src = "pumpkin2.jpg" alt= "Cinnamon roll 2"  class="pumpkins"> 
-                <img src = "pumpkin3.jpg" alt= "Cinnamon roll 3"  class="pumpkins"> 
+                <img src = "vanilla-milk.jpg" alt= "Cinnamon roll 1"  class="pumpkins"> 
+                <img src = "sugar-milk.jpg" alt= "Cinnamon roll 2"  class="pumpkins"> 
+                <img src = "double-chocolate.jpg" alt= "Cinnamon roll 3"  class="pumpkins"> 
             </div>
             <div class="food-details">
                 <p>Pumpkin cinnamon rolls with real pumpkin in the dough. 
@@ -58,8 +58,8 @@
                 <form class = "item-select">
                     <div class="glaze-type">
                         <label for="glaze">Glaze: </label>
-                        <select name="Glaze" id="glaze">
-                            <option value ="none">None</option>
+                        <select name="Glaze" id="glaze-name" onchange="imgChange()">
+                            <option value ="pumpkin-spice-roll">None</option>
                             <option value="vanilla-milk">Vanilla-Milk (Recommended)</option>
                             <option value="sugar-milk">Sugar-Milk</option>
                             <option value="double-chocolate">Double-Chocolate</option>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="quantity">
                         <label for="dropdown-quantity">Quantity: </label>
-                        <select id="dropdown-quantity">
+                        <select id="dropdown-quantity" onchange="quantitySelected()">
                             <option>1</option>
                             <option>3</option>
                             <option>6</option>
