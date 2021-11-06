@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework 6a</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="main.js"></script>
+  </head>
+  
+  <body>
+    <div class = "container">
+        <nav class = "header">
+            <ul>
+                <li>
+                    <a href = "index.html">Home</a>
+                </li>
+                <li>
+                    <a href = "#">About Us</a>
+                </li>
+                <li>
+                    <a href = "bakery.html">Bakery</a>
+                </li>
+                <li>
+                    <a href = "#">Catering & Delivery</a>
+                </li>
+                <li>
+                    <a href = "#">Rewards Program</a>
+                </li>
+                <li>
+                    <a href = "cart.html" id = "cart-label">Cart</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <a href = "index.html"><img src="BunBun-Logo.png" alt="Bun Bun Logo" id = "logo"></a>
+    <a href= "bakery.html"><h4 id = "bakery-direction">Back to the Bakery</h4></a>
+
+    <br>
+
+    <br>
+    <div>
+        <h1 id="pumpkin-spice-title">Pumpkin Spice Cinnamon Bun</h1>
+        <h2 id = "price">$5.99</h2>
+        <div class="pumpkin-images">
+            <img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" id="pumpkin">
+            <div class = "side-pics">
+                <img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll"  class ="pumpkins" id = "main-pumpkin"> 
+                <img src = "pumpkin1.jpg" alt= "Cinnamon roll 1"  class="pumpkins"> 
+                <img src = "pumpkin2.jpg" alt= "Cinnamon roll 2"  class="pumpkins"> 
+                <img src = "pumpkin3.jpg" alt= "Cinnamon roll 3"  class="pumpkins"> 
+            </div>
+            <div class="food-details">
+                <p>Pumpkin cinnamon rolls with real pumpkin in the dough. 
+                <br>Unravel each doughy pumpkin coil and taste the melty pumpkin spices inside.</p>
+                <p><b>Contains:</b> milk, pumpkin, eggs, yeast & wheat</p>
+            </div>
+            <div>
+                <form class = "item-select">
+                    <div class="glaze-type">
+                        <label for="glaze">Glaze: </label>
+                        <select name="Glaze" id="glaze">
+                            <option value ="none">None</option>
+                            <option value="vanilla-milk">Vanilla-Milk (Recommended)</option>
+                            <option value="sugar-milk">Sugar-Milk</option>
+                            <option value="double-chocolate">Double-Chocolate</option>
+                        </select>
+                    </div>
+                    <div class="quantity">
+                        <label for="quantity">Quantity: </label>
+                        <select name="Quantity" id="quantity"  onchange = "changePrice(value);">
+                            <option value = "1">1</option>
+                            <option value= "3">3</option>
+                            <option value= "6">6</option>
+                            <option value= "12">12</option>
+                        </select>
+                    </div>
+                </form>
+                <button type="button" class = "button" onclick="updateCartTab(); myAlert();">Add to Cart</button>               
+            </div>
+            <br>
+            <div>
+                <h1 id = "related-products">Related Products</h1>
+                <div class = "row-padding column-padding align food">
+                    <div class = "rolls">
+                        <img src = "blueberry-cinnamon-roll.jpg" alt= "Blueberry Cinnamon roll" class = "roll-pics">
+                        <h3 class = "roll-text">Blueberry Cinnamon Bun</h3>
+                        <h3 class = "prices">$5.99</h3>
+                    </div>
+                
+                    <div class = "rolls">
+                        <img src = "walnut-cinnamon-roll.jpg" alt = "walnut-cinnamon-roll" class = "roll-pics">
+                        <h3 class = "roll-text">Walnut Cinnamon Bun <span class = "popular"> (POPULAR!)</span></h3>
+                        <h3 class = "prices">$4.99</h3>
+                    </div>
+            
+                    <div class = "rolls">
+                        <img src= "Caramel-pecan-cinnamon-roll.jpg" alt = "Caramel-pecan-cinnamon-roll" class = "roll-pics">
+                        <h3 class = "roll-text">Caramel Pecan Cimmamon Bun</h3>
+                        <h3 class = "prices">$5.99</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <br>
+
+    <br>
+    <footer>
+        <div class = "footer">
+            <div>
+                <h4>contact us:
+                <br>
+                bakery@bunbun.com
+                </h4>            
+            </div>
+            <div>
+                <img src = "facebook-pics.png" alt = "facebook logo" class = "socials">
+                <img src = "insta-logo.png" alt = "instagram logo" class = "socials">
+                <img src = "twitter-logo.png" alt = "twitter logo" class = "socials">
+            </div>
+        </div>
+    </footer>
+  </body>

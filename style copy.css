@@ -1,0 +1,349 @@
+html body {   
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+div {
+    display: block;
+}
+
+.header {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+
+.header li {
+    float: left;
+    list-style-type: none;
+
+}
+
+.header li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 0px 75px 0px;
+    text-decoration: none;
+}
+
+.header li a:hover {
+    color: #3F5DCB;
+    text-decoration: underline;
+}
+
+
+.container {
+    background-color: rgba(198, 244, 199, 0.51);
+    width: 100%;
+    height: 160px;
+    left: 0px;
+    top: -20px;
+    padding-bottom: 0px;
+    background-size: cover;
+}
+
+#logo {
+    position: absolute;
+    top: 80px;
+    display: block;
+    margin-left: 45%;
+    margin-right: 50%;
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    z-index: 2;
+}
+
+#banner {
+    background: url("regular-cinnsmon-roll.jpeg");
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    font-weight: bolder;
+    background-size: cover;
+    background-color: #cccccc;
+    font-size: 100px;
+    filter: grayscale(45%);
+    opacity: 0.9;
+    top: -70px;
+    padding-top: 0px;
+}
+
+
+#seasonal-favorites {
+    text-align: center;
+    font-weight: bold;
+}
+
+.row-padding {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.align {
+    text-align: left;
+}
+
+.roll-pics {
+    width: 300px;
+    height: 200px;
+}
+
+.roll-text:hover {
+    color:#3F5DCB;
+    text-decoration: underline;
+}
+
+.rolls a {
+    color: black;
+    text-decoration: none;
+}
+
+.rolls a:hover {
+    color: #3F5DCB;
+    text-decoration: underline;
+}
+
+.rolls {
+    width: 33%;
+    display: block;
+    float: left;
+}
+
+.food {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+    padding: 0px 75px 0px;     
+}
+
+#new {
+    color: red;
+}
+
+.popular {
+    color: lime;
+}
+
+.socials {
+    width: 47.37px;
+    height: 43.53px;
+    bottom: 0px;
+    float: right;
+}
+
+
+footer { 
+    position: relative;
+    width: 100%;
+    height: 115px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(130, 118, 203, 0.19);
+    background-size: cover;
+    display: inline-block;
+}
+
+#bakery-title {
+    padding-left: 30px;
+}
+
+#bakery-direction:hover {
+    color: #3F5DCB;
+}
+
+#bakery-direction {
+    padding-left: 75px;
+    color: black;
+}
+
+#pumpkin-spice-title {
+    padding-left: 75px;
+}
+
+#price {
+    color: lime;
+    padding-left: 75px;
+}
+
+#pumpkin {
+    width: 420px;
+    height: 275px;
+    padding-left: 75px;
+}
+
+.side-pics {
+    line-height: 50px;
+    width: 63px;
+    text-align: center;
+    margin: 1em 0;
+    position:absolute;
+    top: 385px;
+    left: 525px;
+}
+
+.pumpkins {
+    width: 63px;
+    height: 50px;
+    vertical-align: middle; 
+    padding-bottom: 25px;
+}
+
+#main-pumpkin {
+    filter: grayscale(50%);
+}
+
+.food-details {
+    padding-left: 75px;
+}
+
+.glaze-type {
+    position: absolute;
+    top: 450px;
+    left: 750px;
+    font-size: 20px;
+}
+
+.quantity {
+    position: absolute;
+    top: 550px;
+    left: 750px;
+    font-size: 20px;
+}
+
+.button {
+    background-color: rgba(104, 215, 65, 0.57);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    top: 680px;
+    left: 800px;
+    font-weight: bold;
+}
+
+.button:hover {
+    color: #3F5DCB;
+    background-color: #99ABEE;
+}
+
+#related-products {
+    text-align: center;
+    font-weight: bold; 
+}
+
+.roll-pics:hover {
+    filter: grayscale(65%);
+}
+
+h4 {
+    padding-left: 20px;
+}
+
+#cart-items {
+    position: absolute;
+    width: 62px;
+    height: 28px;
+    left: 120px;
+    top: 287px;
+}
+
+#cart-price {
+    position: absolute;
+    width: 49px;
+    height: 28px;
+    left: 560px;
+    top: 287px;
+
+}
+
+#cart-quantity {
+    position: absolute;
+    width: 77px;
+    height: 28px;
+    left: 860px;
+    top: 287px;
+}
+
+#cart-total {
+    position: absolute;
+    width: 160px;
+    height: 28px;
+    left: 1160px;
+    top: 287px;
+
+}
+
+.cart-header {
+    float: left;
+    list-style-type: none;
+    display: flex;
+    font-weight: bold;
+}
+
+#line {
+    position: absolute;
+    width: 1200px;
+    height: 0px;
+    left: 95px;
+    top: 300px;
+    border: 1px solid #000000;
+}
+
+#cart-image {
+    position: absolute;
+    width: 118px;
+    height: 125px;
+    left: 100px;
+    top: 356px;
+}
+
+#cart-text {
+    position: absolute;
+    width: 250px;
+    height: 73px;
+    left: 225px;
+    top: 382px;
+}
+
+#item-price {
+    position: absolute;
+    left: 565px;
+    top: 382px;
+}
+
+#item-quantity {
+    position: absolute;
+    left: 875px;
+    top: 395px;
+}
+
+#item-total {
+    position: absolute;
+    left: 1185px;
+    top: 382px;
+}
+
+#cart-button {
+    position: absolute;
+    left: 1140px;
+    top: 830px;
+}
+
+#cart-footer {
+    position: absolute;
+    left: 0px;
+    top: 980px;
+}
