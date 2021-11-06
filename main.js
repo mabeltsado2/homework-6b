@@ -1,6 +1,7 @@
-function cinnaRoll(quantity, glaze){
+function cinnaRoll(quantity, glaze, price){
     this.quantity = quantity;
     this.glaze = glaze;
+    this.price = price;
 }
 
 const cartArr = [];
@@ -27,6 +28,8 @@ var quantityValue
 function quantitySelected() {
     quantityValue = Number(document.getElementById("dropdown-quantity").value)
     document.getElementById("price").innerHTML = "$" + calculatePrice(quantityValue)
+    console.log (quantityValue);
+    return quantityValue;
 }
 
 var glazeValue
@@ -34,24 +37,27 @@ function imgChange () {
     glazeValue = document.getElementById("glaze-name").value
     glazeValue = glazeValue.split(" ")[0]
     document.getElementById("pumpkin").src = glazeValue + ".jpg"
+    console.log (glazeValue);
+    return glazeValue;
 }
 
 
 // create json object based on selected values
 
 function calculatePrice (quantityValue) {
-    return quantityValue * 5.99
+    priceValue = quantityValue * 5.99
+    return priceValue
 }
 
-function addItem() {
-    // get stored value of cart items
-    var cartItemsString = localStorage.getItem("cartItems")
-    // check if item exists in storage, if so, parse it
-    if (cartItemsString === null) { // first time, we have to create the cartItems list
-      var cartItems = []
-    } else { // we've been here before, load the value
-      var cartItems = JSON.parse(cartItemsString)
-    }
+function addCartItem () {
+    let quantityValue = quantitySelected ();
+    let glazeValue = imgChange ();
+    let priceValue = calculatePrice (quantityValue);
+    let itemSelected = new cinnaRoll (quantityValue, glazeValue, priceValue);
+    cartArr.push(itemSelected);
+    itemSelectedJSON = JSON.stringify(cartArr);
+    localStorage.setItem("cart", itemSelectedJSON);
+
 }
 // switch glazeValue {
 //     case "none": 
@@ -69,8 +75,9 @@ function addItem() {
 
 // }
 
-let itemSelected = new cinnaRoll (quantityValue, glazeValue)
-// add this newly selected item to the cart
-cartArr.push(itemSelected)
 
-updateCartTab ();
+// add this newly selected item to the cart
+
+
+
+//updateCartTab ();
