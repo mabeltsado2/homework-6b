@@ -5,11 +5,11 @@ function showProductInCart(product, position) {
     const cartArray1 = storedValue1 ? storedValue1 : []; 
 
     const cartDiv = document.getElementById('cart-container');
-    let thecode = '<img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" class = "roll-pics" id="cart-image"><div id = "cart-text" class = "roll-pics"><b>Pumpkin Spice Cinnamon Roll</b><br><div>Glaze: '+ product.glaze+'</div><br><div class = "roll-text" id = "remove" onClick = "removeItem('+position+');">Remove</div></div><div id = "item-price">$5.99</div><div id="item-quantity">'+ product.quantity+'</div><div id = "item-total">$'+ product.price+'</div>';
-    document.getElementById("cart-container").innerHTML += thecode; 
+    let cartCode = '<img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" class = "roll-pics" id="cart-image"><div id = "cart-text" class = "roll-pics"><b>Pumpkin Spice Cinnamon Roll</b><br><div>Glaze: '+ product.glaze+'</div><br><div class = "roll-text" id = "remove" onClick = "removeItem('+position+');">Remove</div></div><div id = "item-price">$5.99</div><div id="item-quantity">'+ product.quantity+'</div><div id = "item-total">$'+ product.price+'</div>';
+    document.getElementById("cart-container").innerHTML += cartCode; 
 }
 
-function displayCart() {
+function displayCartItems() {
     // Getting item from local storage
     const storedValue1 = JSON.parse(localStorage.getItem("cartArr"));
     const cartArray1 = storedValue1 ? storedValue1 : []; 
@@ -18,14 +18,14 @@ function displayCart() {
         showProductInCart(cartArray1[i],i);
     }
 }
-displayCart();
+displayCartItems();
 
 
 //Remove item
 function removeItem(position) {
     cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
     cartArr.splice(position,1);
-    console.log(cartArr);
+    //console.log(cartArr);
     itemSelectedJSON = JSON.stringify(cartArr);
     localStorage.setItem("cartArr", itemSelectedJSON);
     //document.getElementById("cart-container").innerHTML = "";

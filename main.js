@@ -1,3 +1,4 @@
+//Create an object
 function cinnaRoll(quantity, glaze, price){
     this.quantity = quantity;
     this.glaze = glaze;
@@ -6,13 +7,13 @@ function cinnaRoll(quantity, glaze, price){
 
 var cartArr;
 
+//Get Tab Label to update when add to cart is pressed
 function updateCartTab() {
 
     cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
     let cartNum = cartArr.length; 
     console.log("size: "+cartNum);
     if (cartNum > 0){
-        //document.getElementById('cart-label').href = "cart.html";
         document.getElementById('cart-label').textContent = "Cart("+cartNum+ ")";
         
     } else {
@@ -22,10 +23,12 @@ function updateCartTab() {
 
 updateCartTab();
 
+//Alert Page when add to car is presses
 function myAlert() {
     alert("Items Added to Cart!");
   }
 
+//Select Quantity from drop down and change price
 var quantityValue
 function quantitySelected() {
     quantityValue = Number(document.getElementById("dropdown-quantity").value)
@@ -34,6 +37,7 @@ function quantitySelected() {
     return quantityValue;
 }
 
+//Select Glaze and Change image
 var glazeValue
 function imgChange() {
     glazeValue = document.getElementById("glaze-name").value
@@ -43,14 +47,13 @@ function imgChange() {
     return glazeValue;
 }
 
-
-// create json object based on selected values
-
+//Calculate Change in Price
 function calculatePrice(quantityValue) {
     priceValue = quantityValue * 5.99
     return priceValue
 }
 
+//Add Items to Cart
 function addCartItem() {
     let quantityValue = quantitySelected();
     let glazeValue = imgChange();
@@ -63,24 +66,6 @@ function addCartItem() {
     localStorage.setItem("cartArr", itemSelectedJSON);
 
 }
-// switch glazeValue {
-//     case "none": 
-//         var imgsrcValue = "pumpkin-spice-roll.jpg" ;
-//         break;
-//     case "vanilla-milk": 
-//         var imgsrcValue = "pumpkin1.jpg" ;
-//         break;
-//     case "sugar-milk": 
-//         var imgsrcValue = "pumpkin2.jpg" ;
-//         break;
-//     case "double-chocolate": 
-//         var imgsrcValue = "pumpkin3.jpg" ;
-//         break;
-
-// }
-
-
-// add this newly selected item to the cart
 
 
 
