@@ -4,21 +4,23 @@ function cinnaRoll(quantity, glaze, price){
     this.price = price;
 }
 
-const cartArr = [];
+var cartArr;
 
-//function updateCartTab() {
+function updateCartTab() {
 
-    //cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
-    //let cartNum = cartArr.length; 
-
-    //if (cartNum > 0){
-       // document.getElementById('cart-label').href = "cart.html";
-        //document.getElementById('cart-label').textContent = "Cart("+cartNum+ ")";
+    cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
+    let cartNum = cartArr.length; 
+    console.log("size: "+cartNum);
+    if (cartNum > 0){
+        //document.getElementById('cart-label').href = "cart.html";
+        document.getElementById('cart-label').textContent = "Cart("+cartNum+ ")";
         
-    //} else {
-       // document.getElementById('cart-label').textContent = "Cart"
-    //}
-//}
+    } else {
+       document.getElementById('cart-label').textContent = "Cart";
+    }
+}
+
+updateCartTab();
 
 function myAlert() {
     alert("Items Added to Cart!");
@@ -33,30 +35,32 @@ function quantitySelected() {
 }
 
 var glazeValue
-function imgChange () {
+function imgChange() {
     glazeValue = document.getElementById("glaze-name").value
     glazeValue = glazeValue.split(" ")[0]
     document.getElementById("pumpkin").src = glazeValue + ".jpg"
-    console.log (glazeValue);
+    console.log(glazeValue);
     return glazeValue;
 }
 
 
 // create json object based on selected values
 
-function calculatePrice (quantityValue) {
+function calculatePrice(quantityValue) {
     priceValue = quantityValue * 5.99
     return priceValue
 }
 
-function addCartItem () {
-    let quantityValue = quantitySelected ();
-    let glazeValue = imgChange ();
-    let priceValue = calculatePrice (quantityValue);
-    let itemSelected = new cinnaRoll (quantityValue, glazeValue, priceValue);
+function addCartItem() {
+    let quantityValue = quantitySelected();
+    let glazeValue = imgChange();
+    let priceValue = calculatePrice(quantityValue);
+    let itemSelected = new cinnaRoll(quantityValue, glazeValue, priceValue);
+    cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
     cartArr.push(itemSelected);
+    console.log(cartArr);
     itemSelectedJSON = JSON.stringify(cartArr);
-    localStorage.setItem("cart", itemSelectedJSON);
+    localStorage.setItem("cartArr", itemSelectedJSON);
 
 }
 // switch glazeValue {
@@ -80,4 +84,3 @@ function addCartItem () {
 
 
 
-//updateCartTab ();

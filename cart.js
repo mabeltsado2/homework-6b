@@ -1,16 +1,34 @@
 
-// Getting item from local storage
-const storedValue1 = JSON.parse(localStorage.getItem("cart"));
-const cartArray1 = storedValue1 ? storedValue1 : []; 
+function showProductInCart(product, position) {
+    // Getting item from local storage
+    const storedValue1 = JSON.parse(localStorage.getItem("cartArr"));
+    const cartArray1 = storedValue1 ? storedValue1 : []; 
 
-const cartDiv = document.getElementById('cart-container');
-
-function showProductInCart(product) {
-    let thecode = '<img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" class = "roll-pics" id="cart-image"><div id = "cart-text" class = "roll-pics"><b>Pumpkin Spice Cinnamon Roll</b><br><div>Glaze: '+ product.glaze+'</div><div id = "remove" >Remove</div></div><div id = "item-price">$5.99</div><div id="item-quantity">'+ product.quantity+'</div><div id = "item-total">$'+ product.price+'</div><br>';
+    const cartDiv = document.getElementById('cart-container');
+    let thecode = '<img src = "pumpkin-spice-roll.jpg" alt= "pumpkin spice Cinnamon roll" class = "roll-pics" id="cart-image"><div id = "cart-text" class = "roll-pics"><b>Pumpkin Spice Cinnamon Roll</b><br><div>Glaze: '+ product.glaze+'</div><br><div class = "roll-text" id = "remove" onClick = "removeItem('+position+');">Remove</div></div><div id = "item-price">$5.99</div><div id="item-quantity">'+ product.quantity+'</div><div id = "item-total">$'+ product.price+'</div>';
     document.getElementById("cart-container").innerHTML += thecode; 
 }
 
+function displayCart() {
+    // Getting item from local storage
+    const storedValue1 = JSON.parse(localStorage.getItem("cartArr"));
+    const cartArray1 = storedValue1 ? storedValue1 : []; 
     for (let i = 0; i < cartArray1.length; i++) {
-       cartArray1[i].id = i+1; 
-        showProductInCart(cartArray1[i]);
+        cartArray1[i].id = i+1; 
+        showProductInCart(cartArray1[i],i);
     }
+}
+displayCart();
+
+
+//Remove item
+function removeItem(position) {
+    cartArr = JSON.parse(localStorage.getItem("cartArr") || "[]");
+    cartArr.splice(position,1);
+    console.log(cartArr);
+    itemSelectedJSON = JSON.stringify(cartArr);
+    localStorage.setItem("cartArr", itemSelectedJSON);
+    //document.getElementById("cart-container").innerHTML = "";
+    //displayCart();
+    location.reload();
+}

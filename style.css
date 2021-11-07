@@ -260,7 +260,7 @@ h4 {
     grid-template-columns: 130px 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
-    "cart-item . cart-price cart-quantity cart-total";
+    "cart-item . cart-price cart-quantity cart-total"
 }
 
 #cart-image {
@@ -287,6 +287,10 @@ h4 {
     position: relative;
     left: 1140px;
     top: 100px;
+}
+
+#remove {
+    text-decoration: underline;
 }
 
 /*
